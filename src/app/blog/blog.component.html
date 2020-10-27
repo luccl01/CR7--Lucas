@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="row mb-5">
+      <div class="col-lg-12 col-md-12 mb-5 bg-light" *ngFor="let x of journeys">
+        <img id="journeyImg" class="img-fluid" src="/assets/{{x.image}}">
+        
+        <ul>
+            <li>Hi, you can call me {{x.name}}</li>
+            <li>I am {{x.age}} y/o </li>
+            <li>{{x.comment}}</li>
+        </ul>
+      </div>
+    </div>
+  
+    <h1>Add your Journey</h1>
+  
+  <div class="d-flex">
+  
+    <div id="left">
+      <p>Image:</p>
+      <p>Name:</p>
+      <p>Age:</p>
+      <p>Comment:</p>
+    </div>
+  
+  
+    <div id="right" class="ml-1">
+      <form [formGroup]="info" enctype="multipart/form-data" method="post">
+        <p><input type="text" formControlName="image"></p>
+        <p><input type="text" formControlName="name"></p>
+        <p><input type="text" formControlName="age"></p>
+        <p><input type="text" formControlName="comment"></p>
+        <button (click)="addjourneys()" class="btn btn-primary" type="submit">Tell your Story</button>
+      </form>
+  
+      
+    </div>
+  </div>
+   
+  
+  </div>

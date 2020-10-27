@@ -1,0 +1,31 @@
+<div class="container my-5">
+<h3 class="mb-2">Cart</h3>
+
+<div class="cart-item mb-3" *ngFor="let item of items">
+  <h3>Overview</h3>
+ <li><span>{{ item.destination }} </span></li>
+ <li><span>€ {{ item.price}}</span></li>
+ <li><span>€ {{ item.start}}</span></li>
+ <li><span>€ {{ item.duration}}</span></li>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+    <div>
+      <label for="name">
+        Name
+      </label>
+      <input class="ml-4" id="name" type="text" formControlName="name">
+    </div>
+   
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input class="ml-3"id="address" type="text" formControlName="address">
+    </div>
+   
+    <button class="button" type="submit">Purchase</button>
+   
+   </form>
+  </div>
